@@ -100,6 +100,8 @@ public class PairTest1 {
             }
 
             class myIterator implements Iterator {
+                private Vector<Pair<String>> v = vector;
+                private int s = size;
                 @Override
                 public void remove() {
 
@@ -112,12 +114,12 @@ public class PairTest1 {
 
                 @Override
                 public boolean hasNext() {
-                    return size!=0;
+                    return s!=0;
                 }
 
                 @Override
                 public Object next() {
-                    return vector.remove(--size);
+                    return vector.remove(--s);
                 }
             }
         };
